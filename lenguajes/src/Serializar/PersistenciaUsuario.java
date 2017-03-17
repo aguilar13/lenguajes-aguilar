@@ -23,7 +23,22 @@ public class PersistenciaUsuario {
         file out putstream aqui ira el stream de bytes
         object crea un objetoo y transforma el stream de bytes
         oos saca o transforma el objeto*/
+          /*
+    primero obtenemos la busqueda
+    */
+          
+    }
+    public Usuario buscarPorNombre(String nombre)throws Exception{
+        File file=new File("basesita-usuarios");
+        FileInputStream fis=new FileInputStream(file);
+        ObjectInputStream ois=new ObjectInputStream(fis);
+        Usuario encontrado=null;
+   Usuario u=     (Usuario) ois.readObject();
+       //Comparamos
+       if(u.getNombre().equals(nombre))encontrado=u;
+       return encontrado;
         
+       
         
         
     }
